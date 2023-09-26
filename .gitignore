@@ -1,2 +1,4 @@
 NotesData/*.txt
 .prettierrc
+dist
+tasks.txt

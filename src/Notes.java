@@ -21,8 +21,7 @@ public class Notes {
                 System.out.println("----------------------");
                 System.out.print("Enter file name: ");
                 String filename = scanner.nextLine();
-    
-                // Create the file
+
                 File file = new File("NotesData/" + filename + ".txt");
                 try {
                     file.createNewFile();
@@ -39,7 +38,6 @@ public class Notes {
                 System.out.print("Enter text: ");
                 String text = scanner.nextLine();
     
-                // Write the text to the file
                 try (FileWriter writer = new FileWriter(file)) {
                     writer.write(text);
                     System.out.println("----------------------");
@@ -58,12 +56,10 @@ public class Notes {
                 System.out.print("Enter file name: ");
                 String filenameRead = scanner.nextLine();
                 
-                // Read the file content
                 try {
                     File fileread = new File("NotesData/" + filenameRead + ".txt");
                     Scanner fileScanner = new Scanner(fileread);
                 
-                    // Log the content
                     System.out.println("----------------------");
                     System.out.println("File content:");
                     System.out.println("----------------------");
@@ -84,7 +80,6 @@ public class Notes {
                 System.out.print("Enter file name: ");
                 String filenamedel = scanner.nextLine();
                 
-                // Delete the file
                 File filedel = new File("NotesData/" + filenamedel + ".txt");
                 if (filedel.exists()) {
                     if (filedel.delete()) {
@@ -105,15 +100,12 @@ public class Notes {
             case "list":
             File folder = new File("NotesData");
 
-            // Get the list of files in the folder
             File[] files = folder.listFiles();
     
             if (files != null) {
-                // Iterate over the files
                 System.out.println("----------------------");
                 for (File filel : files) {
                     if (filel.isFile() && filel.getName().endsWith(".txt")) {
-                        // Print the file name without the extension
                         String filenamel = filel.getName();
                         String nameWithoutExtension = filenamel.substring(0, filenamel.lastIndexOf('.'));
                         System.out.println(nameWithoutExtension);
