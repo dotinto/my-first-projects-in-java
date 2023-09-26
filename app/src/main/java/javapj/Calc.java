@@ -1,3 +1,5 @@
+package javapj;
+
 import java.util.Scanner;
 
 class Calc {

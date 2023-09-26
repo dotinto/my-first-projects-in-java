@@ -1,3 +1,5 @@
+package javapj;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -14,7 +16,7 @@ public class Notes {
             notesFolder.mkdir();
         }
         
-        System.out.print("Select, what gon do (create, read, list, delete): ");
+        System.out.print("Select task (create, read, list, delete): ");
         String s = scanner.nextLine();
         switch (s) {
             case "create":
