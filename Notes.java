@@ -10,7 +10,7 @@ public class Notes {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
-        System.out.print("Select, what gon do (create, read, update, delete): ");
+        System.out.print("Select, what gon do (create, read, list, delete): ");
         String s = scanner.nextLine();
         switch (s) {
             case "create":
@@ -97,6 +97,30 @@ public class Notes {
                     System.out.println("----------------------");
                 }
                 break;
+            case "list":
+            File folder = new File("NotesData");
+
+            // Get the list of files in the folder
+            File[] files = folder.listFiles();
+    
+            if (files != null) {
+                // Iterate over the files
+                System.out.println("----------------------");
+                for (File filel : files) {
+                    if (filel.isFile() && filel.getName().endsWith(".txt")) {
+                        // Print the file name without the extension
+                        String filenamel = filel.getName();
+                        String nameWithoutExtension = filenamel.substring(0, filenamel.lastIndexOf('.'));
+                        System.out.println(nameWithoutExtension);
+                        
+                    }
+                }
+                System.out.println("----------------------");
+            } else {
+                System.out.println("----------------------");
+                System.out.println("The folder does not exist or is not a directory.");
+                System.out.println("----------------------");
+            }
             default:
                 break;
         }
