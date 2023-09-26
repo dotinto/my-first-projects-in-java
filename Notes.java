@@ -118,7 +118,7 @@ public class Notes {
                 System.out.println("----------------------");
             } else {
                 System.out.println("----------------------");
-                System.out.println("The folder does not exist or is not a directory.");
+                System.out.println("The folder does not exist or is not a directory. Create folder 'NotesData'.");
                 System.out.println("----------------------");
             }
             default:
