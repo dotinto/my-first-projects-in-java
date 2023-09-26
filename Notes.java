@@ -9,6 +9,10 @@ public class Notes {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        File notesFolder = new File("NotesData");
+        if (!notesFolder.exists()) {
+            notesFolder.mkdir();
+        }
         
         System.out.print("Select, what gon do (create, read, list, delete): ");
         String s = scanner.nextLine();
@@ -28,6 +32,7 @@ public class Notes {
                     System.out.println("----------------------");
                     System.out.println("An error occurred while creating the file: " + e.getMessage());
                     System.out.println("----------------------");
+                    scanner.close();
                     return;
                 }
                 System.out.println("----------------------");
@@ -124,5 +129,6 @@ public class Notes {
             default:
                 break;
         }
+        scanner.close();
     }
 }

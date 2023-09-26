@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Main {
+class Calc {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Введите способ вычисления (+, -, *, /): ");
